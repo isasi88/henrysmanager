@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  condicion: MyString
+  finished: false
+  finishdate: 2017-07-19 01:27:40
+  startdate: 2017-07-19 01:27:40
+  price: 
+  beneficio: 
+  iva: 
+  contactoprincipal: MyString
+  category_id: 1
+
+two:
+  title: MyString
+  description: MyText
+  condicion: MyString
+  finished: false
+  finishdate: 2017-07-19 01:27:40
+  startdate: 2017-07-19 01:27:40
+  price: 
+  beneficio: 
+  iva: 
+  contactoprincipal: MyString
+  category_id: 1
