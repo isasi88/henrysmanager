@@ -11,7 +11,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 </head>
 <body>
-
 <%= render "layouts/header.html.erb" %>
 <% if user_signed_in? %>
 <div class="row">
@@ -29,15 +28,9 @@
 <%= yield %>
 </div>
 <% else %>
-<div class="form-new">
-<%= form_for(:user, :url => session_path(:user)) do |f| %>
-		  <%= f.text_field :email, class: "form-control" %>
-		  <%= f.password_field :password, class: "form-control" %>
-		  <%= f.check_box :remember_me %>
-		  <%= f.label :remember_me, "Recordarme" %>
-		  <%= f.submit 'Entrar' %>
-		  <%= link_to "He olvidado mi contraseña", new_password_path(:user) %>
-		<% end %>
+<div class="main-page">
+<%= yield %>
+</div>
 <% end %>
 </div>
 </section>
