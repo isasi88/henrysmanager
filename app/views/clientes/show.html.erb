@@ -1,0 +1,37 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cliente.name %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @cliente.telephone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cliente.email %>
+</p>
+
+<h2>Proyectos de tu cliente <% @cliente.name %> </h2>
+
+<div class="row">
+		<% @cliente.projects.each do |p| %>
+		  <div class="col-sm-6">
+		    <div class="card cliente">
+		      <div class="card-block">
+		        <h3 class="card-title"><%= p.title %></h3>
+		        <p class="card-text"><%= p.description %></p>
+		        <%= link_to "Ir a proyecto", project_path, class: "btn btn-primary" %>
+		      </div>
+		    </div>
+		  </div>
+		  <% end %>
+		</div>
+
+<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
+<%= link_to 'Back', clientes_path %>
+</div>

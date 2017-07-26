@@ -1,0 +1,44 @@
+<%= form_for [current_user,@negociation] do |f| %>
+  <% if @negociation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@negociation.errors.count, "error") %> prohibited this negociation from being saved:</h2>
+
+      <ul>
+      <% @negociation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-new">
+<h1>Nueva negociación</h1>
+  <div class="form-group">
+    <%= f.label :title, "Cliente" %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :business, "Empresa" %><br>
+    <%= f.text_field :business,class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, "Tema tratado" %><br>
+    <%= f.text_area :description,class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :telephone, "Teléfono" %><br>
+    <%= f.text_field :telephone,class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, "Email" %><br>
+    <%= f.text_field :email,class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :state, "Estado de la negociación" %><br>
+    <%= f.select :state, [['Toma de contacto', 1], ['En conversaciones', 2], ['Avanzada', 3], ['Muy avanzada', 4], ['Cerrada', 5]], class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </div>
+<% end %>

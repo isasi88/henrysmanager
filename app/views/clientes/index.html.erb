@@ -1,0 +1,36 @@
+<h1>Listado de mis clientes</h1>
+
+<table id="clientes" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Teléfono</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= cliente.name %></td>
+        <td><%= cliente.telephone %></td>
+        <td><%= cliente.email %></td>
+        <td><%= link_to '<button class="btn-primary btn-small">Ver</button>'.html_safe, user_clientes_path(current_user) %></td>
+        <td><%= link_to '<button class="btn-primary btn-small">Editar</button>'.html_safe, edit_user_cliente_path(current_user,cliente) %></td>
+        <td><%= link_to '<button class="btn-primary btn-small">Borrar</button>'.html_safe, user_cliente_path(current_user,cliente), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<script>
+$(document).ready(function() {
+    $('#clientes').DataTable( {
+        "order": [[ 5, "desc" ]]
+    } );
+} );
+</script>
+<%= link_to '<button class="btn-primary">New Cliente</button>'.html_safe, new_user_cliente_path %>

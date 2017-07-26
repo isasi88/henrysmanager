@@ -1,4 +1,5 @@
-<%= form_for(@project) do |f| %>
+<%= form_for [@user,@project] do |f| %>
+<div class="form-new">
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -11,51 +12,65 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :titulo, "Titulo" %><br>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :Descripcion, "Descripcion" %><br>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :condicion %><br>
-    <%= f.text_field :condicion %>
+  <div class="form-group">
+    <%= f.label :cliente_id, "Cliente" %><br>
+    <%= f.collection_select :cliente_id, @clients, :id, :name, class: "form-control" %>
+    <%= link_to "<button class='btn btn-primary'>O añade un nuevo cliente</button>".html_safe, new_user_cliente_path %>
   </div>
-  <div class="field">
-    <%= f.label :finished %><br>
-    <%= f.check_box :finished %>
+  <div class="form-group">
+    <%= f.label :condicion, "Tamaño" %><br>
+    <%= f.select :condicion, [['Proyecto Muy Grande', 1], ['Proyecto Grande', 2], ['Proyecto Mediano', 3], ['Proyecto Pequeño', 4]], class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :finishdate %><br>
-    <%= f.datetime_select :finishdate %>
+  <div class="form-group">
+    <%= f.label :startdate, "Fecha de comienzo" %><br>
+    <%= f.date_select :startdate,class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :startdate %><br>
-    <%= f.datetime_select :startdate %>
+  <div class="form-group">
+    <%= f.label :finishdate, "Fecha de entrega" %><br>
+    <%= f.date_select :finishdate,class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
+  <div class="form-group">
+    <%= f.label :price, "Precio pactado (sin IVA)" %><br>
+    <%= f.text_field :price,class: "form-control iva-control", autocomplete: :off %>
   </div>
-  <div class="field">
-    <%= f.label :beneficio %><br>
-    <%= f.text_field :beneficio %>
+  <div class="form-group">
+    <%= f.label :iva, "Iva calculado" %><br>
+    <%= f.text_field :iva,class: "form-control total" %>
   </div>
-  <div class="field">
-    <%= f.label :iva %><br>
-    <%= f.text_field :iva %>
+  <div class="form-group">
+    <%= f.label :beneficio, "Beneficio" %><br>
+    <%= f.text_field :beneficio,class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :contactoprincipal %><br>
-    <%= f.text_field :contactoprincipal %>
+  <div class="form-group">
+    <%= f.label :contactoprincipal, "Persona de contacto" %><br>
+    <%= f.text_field :contactoprincipal,class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+  <div class="form-group">
+    <%= f.label :category_id, "Categoria" %><br>
+    <%= f.number_field :category_id,class: "form-control" %>
   </div>
-  <div class="actions">
+  <div class="form-actions">
     <%= f.submit %>
   </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      function compute() {
+          var a = $('.iva-control').val();
+          var total = a * 0.21;
+          $('.total').val(total);
+        }
+
+        $('.iva-control').change(compute);
+    
+    });
+  </script>
 <% end %>

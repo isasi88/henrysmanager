@@ -1,0 +1,35 @@
+<h1>Mis reuniones</h1>
+
+<section class="row">
+  <div class="col-sm-12">
+  <div class="row">
+  <% @meetings.each do |meeting| %>
+    <div class="col-sm-6">
+      <div class="card cliente row">
+        <div class="card-block col-sm-6">
+          <figure class="date">
+            <header>
+             <%= t (meeting.date.strftime("%B")) %>
+            </header>
+            <section>
+              <%= t (meeting.date.strftime("%d")) %>
+            </section>
+            </figure>
+        </div>
+          <div class="meeting-details col-sm-6">
+            <h3 class="card-title">
+            <%= link_to meeting.title, "#"   %></h3>
+            <i class="icon-clock"></i> <%= t (meeting.date.strftime("%H:%M")) %></br>
+            <i class="icon-map-marker"></i> <%= meeting.location %>
+          </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  </div>
+  </div>
+<%= link_to '<button class="btn float-right btn-primary">Nueva reunion</button>'.html_safe, new_user_meeting_path(current_user) %>
+</section>
+
+
+

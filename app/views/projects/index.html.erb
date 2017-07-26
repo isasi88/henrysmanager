@@ -1,45 +1,37 @@
-<h1>Listing projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Condicion</th>
-      <th>Finished</th>
-      <th>Finishdate</th>
-      <th>Startdate</th>
-      <th>Price</th>
-      <th>Beneficio</th>
-      <th>Iva</th>
-      <th>Contactoprincipal</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= project.condicion %></td>
-        <td><%= project.finished %></td>
-        <td><%= project.finishdate %></td>
-        <td><%= project.startdate %></td>
-        <td><%= project.price %></td>
-        <td><%= project.beneficio %></td>
-        <td><%= project.iva %></td>
-        <td><%= project.contactoprincipal %></td>
-        <td><%= project.category_id %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<section class="row">
+  <div class="col-sm-12">
+  <div class="row">
+  <% @projects.each do |project| %>
+    <div class="col-sm-6">
+      <div class="card cliente row">
+      <div class="ribbon"><span><%= project.price %></span></div>
+        <div class="card-block col-sm-12">
+          <h3 class="card-title">
+          <% if project.cliente %>
+          <span class="project-initials"><%= project.cliente.name.slice(0, 2) %></span>
+          <% else %>
+          <span class="project-initials"><%= project.title.slice(0, 2) %></span>
+          <% end %>
+          <%= link_to project.title, "#"   %></h3>
+          <div class="project-details">
+          <% if project.cliente %>
+         <span class="cliente">Cliente: <%= project.cliente.name %></span>
+         <% else %>
+         <span class="cliente">Cliente: Sin asignar</span>
+          <% end %>
+          <% if project.finished == false %>
+            <span class="finished">Finalizado</span>
+          <% else %>
+            <span class="notfinished">Sin acabar</span>
+          <% end %>
+          <button class="btn-circle" ><i class="icon-folder"></i></button>
+          <button class="btn-circle"><i class="icon-trophy"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+  </div>
+  </div>
+  </div>
+</section>
