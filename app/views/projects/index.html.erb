@@ -6,19 +6,27 @@
       <div class="card cliente row">
       <div class="ribbon"><span><%= project.price %></span></div>
         <div class="card-block col-sm-12">
-          <h3 class="card-title">
+          <div class="row">
+          <div class="cliente-left col-sm-3">
           <% if project.cliente %>
           <span class="project-initials"><%= project.cliente.name.slice(0, 2) %></span>
           <% else %>
           <span class="project-initials"><%= project.title.slice(0, 2) %></span>
           <% end %>
-          <%= link_to project.title, "#"   %></h3>
-          <div class="project-details">
+          </div>
+          <h3 class="cliente-right col-sm-9 card-title">
           <% if project.cliente %>
-         <span class="cliente">Cliente: <%= project.cliente.name %></span>
-         <% else %>
-         <span class="cliente">Cliente: Sin asignar</span>
+          <%= link_to project.cliente.name, "#"   %>
+          <% else %>
+          <%= link_to "Sin asignar", "#"   %>
           <% end %>
+          <% if project.title %>
+         <span><%= project.title %></span>
+         <% else %>
+         <span>Sin asignar</span>
+          <% end %></h3>
+          </div>
+          <div class="project-details">
           <% if project.finished == false %>
             <span class="finished">Finalizado</span>
           <% else %>
