@@ -1,7 +1,5 @@
-<h1>Mis reuniones</h1>
+<h1 class="main-h1">Mis reuniones</h1>
 
-<section class="row">
-  <div class="col-sm-12">
   <div class="row">
   <% @meetings.each do |meeting| %>
     <div class="col-sm-6">
@@ -26,9 +24,7 @@
     </div>
     <% end %>
   </div>
-  </div>
-  </div>
-<%= link_to '<button class="btn float-right btn-primary">Nueva reunion</button>'.html_safe, new_user_meeting_path(current_user) %>
+<%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_meeting_path(current_user) %>
 </section>
 
 

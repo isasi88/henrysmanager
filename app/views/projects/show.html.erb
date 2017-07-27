@@ -1,62 +1,43 @@
 <p id="notice"><%= notice %></p>
 
+<div class="card cliente">
 <p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <strong>Condicion:</strong>
-  <%= @project.condicion %>
-</p>
-
-<p>
-  <strong>Finished:</strong>
-  <%= @project.finished %>
-</p>
-
-<p>
-  <strong>Finishdate:</strong>
-  <%= @project.finishdate %>
-</p>
-<p>
-  <strong>Cliente:</strong>
-  <%= @project.cliente_id %>
-</p>
-<p>
-  <strong>Startdate:</strong>
-  <%= @project.startdate %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @project.price %>
-</p>
-
-<p>
-  <strong>Beneficio:</strong>
-  <%= @project.beneficio %>
-</p>
-
-<p>
-  <strong>Iva:</strong>
-  <%= @project.iva %>
-</p>
-
+  <h1 class="main-h1"><%= @project.title %></h1>
 <p>
   <strong>Contactoprincipal:</strong>
   <%= @project.contactoprincipal %>
 </p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @project.category_id %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<p>
+  Descripción del proyecto:
+  <%= @project.description %>
+</p>
+
+<div>
+  <ul class="row">
+    <li class="col-sm-3">
+      <h6>Fecha de entrega</h6>
+      <%= @project.finishdate %>
+    </li>
+    <li class="col-sm-3">
+      <h6>Fecha de comienzo:</h6>
+      <%= @project.startdate %>
+    </li>
+    <li class="col-sm-3">
+      <h6>Precio estipulado:</h6>
+      <%= @project.price %>
+    </li>
+    <li class="col-sm-3">
+      <h6>Beneficio:</h6>
+      <%= @project.beneficio %>
+    </li>
+    <li class="col-sm-3">
+      <h6>Iva:</h6>
+      <%= @project.iva %>
+    </li>
+  </ul>
+</div>
+</div>
+<%= link_to 'Edit', edit_user_project_path(current_user,@project) %> |
+<%= link_to 'Back', user_projects_path %>

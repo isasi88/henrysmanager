@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="field form-group">
+    <%= f.label :title, "Con quien te reunes" %><br>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+  <div class="field form-group">
+    <%= f.label :date, "Fecha de la reunion" %><br>
+    <%= f.datetime_select :date, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location, class: "gmaps-input-address" %>
+  <div class="field form-group">
+    <%= f.label :location, "Donde es la reunion" %><br>
+    <%= f.text_field :location, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="field form-group">
+    <%= f.label :description, "Notas sobre la reunion" %><br>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
-  <div class="actions">
+  <div class="margin-top">
     <%= f.submit %>
   </div>
   <script>
