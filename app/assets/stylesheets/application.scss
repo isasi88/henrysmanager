@@ -395,10 +395,7 @@ body {
 	padding: 0;
 	.dashboard-inner {
 		padding: 20px 40px;
-	}
-	.dashboard-header {
-		padding: 10px;
-		background: white;
+		padding-top: 80px;
 	}
 }
 
@@ -478,6 +475,18 @@ a {
 	margin-left: 10px;
 }
 
+.no-margin {
+	margin: 0!important;
+}
+.main-dashboard-header {
+	margin-top: 20px;
+	margin-bottom: 0px;
+	text-align: right;
+	margin-right: 40px;
+	position: fixed;
+	right: 30px;
+	z-index: 9999;
+}
 .editable > [type="submit"], html [type="button"] {
 	width: 20%!important;
 }
