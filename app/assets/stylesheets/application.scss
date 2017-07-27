@@ -73,7 +73,7 @@ $step-map: (
 }
 
 .main-page {
-	padding-top:120px;
+	padding-top:10px;
 }
 .steps > li:first-child { width: 0; }
 
@@ -354,12 +354,12 @@ background-image: linear-gradient(to bottom right, #7753eb, #4264fb);
 	}
 }
 body {
-	background: linear-gradient(to bottom right,#7753eb,#4264fb);
+	background: linear-gradient(to bottom right,#7753eb,#4264fb) no-repeat;
+	height: 100vh;
 
 }
 .main-page {
-	background: #fafbfc;
-	height: 100vh;
+	background:none;
 }
 
 .project-initials {
@@ -387,6 +387,9 @@ body {
 	}
 }
 
+.main-header {
+	margin-bottom: 40px;
+}
 .dashboard {
 	background: #ebeff2;
 	padding: 0;
@@ -506,7 +509,7 @@ a {
 	color: #556b81;
 	border: 1px solid lighten(#556b81, 50%);
 	border-radius: 2px;
-	font-family: "Rubik";
+	font-family: "CeraMedium";
 	font-weight: 700;
 }
 
