@@ -1,6 +1,7 @@
 <section class="row">
 <h1 class="main-h1"> Mis proyectos </h1>
   <div class="col-sm-12">
+  <% if @projects.any? %>
   <div class="row">
   <% @projects.each do |project| %>
     <div class="col-sm-6">
@@ -38,5 +39,8 @@
     <% end %>
   </div>
   </div>
+  <% else %>
+      <h1 class="faded-alert">No tienes proyectos... Empieza creando uno!</h1>
+  <% end %>
   </div>
 </section>
