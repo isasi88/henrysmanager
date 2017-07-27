@@ -1,30 +1,29 @@
-
-<div class="form-new">
-<h2>Crear</h2>
+<div class="form-new margin-top">
+<h2>Crear cuenta</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true , class: "form-control"%>
   </div>
 
   <div class="field">
-    <%= f.label :password, "Tu contraseña" %>
+    <%= f.label :password, "Tu clave" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> caracteres)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off",class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation, "Confirmar clave" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="margin-top">
+    <%= f.submit "Empezar" %>
   </div>
 <% end %>
 

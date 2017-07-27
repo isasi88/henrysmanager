@@ -32,8 +32,8 @@
 			</div>
 		<% else %>
 			<div class="main-page">
-			<%= render "layouts/header.html.erb" %>
-			<%= render "devise/sessions/new.html.erb" %>
+			<%= render "pages/landing.html.erb" %>
+			<%= yield %>
 			</div>
 		<% end %>
 	</section>

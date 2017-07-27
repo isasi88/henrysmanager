@@ -1,6 +1,14 @@
 @import "bootstrap";
 
+// Landing
+.landing {
+	text-align: center;
+	.landing-logo {
+		width: 300px;
+	}
+}
 
+.margin-top { margin-top: 30px;}
 @font-face {
 	font-family: 'Cerabold';
 	src: font-url('CeraBold.eot');
@@ -314,6 +322,8 @@ table {
 }
 
 label {
+	    vertical-align: top;
+    padding-top: 8px;
 	font-size: 1rem;
 	font-weight: 700;
 	margin-bottom: 10px;

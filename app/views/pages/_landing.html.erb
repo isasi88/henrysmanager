@@ -1,0 +1,9 @@
+<section class="landing">
+<%= image_tag "logo.svg", class: "landing-logo" %>
+<% if user_signed_in? %>
+  <%= link_to('<button class="btn btn-secondary">Salir</button>'.html_safe, user_projects_path) %>        
+<% else %>
+<%= link_to '<button class="btn btn-secondary">Entrar a mi panel</button>'.html_safe, new_user_session_path %>
+<%= link_to '<button class="btn btn-secondary">Crear mi CRM</button>'.html_safe, new_user_registration_path %>
+<% end %>
+</section>
