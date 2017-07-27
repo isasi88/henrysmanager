@@ -5,10 +5,12 @@
     <div class="col-sm-6">
       <div class="card cliente row">
         <div class="card-block col-sm-12 card-title">
-        <% if project.finished == false %>
-            <span class="finished">Finalizado</span>
+          <% if project.finished == true %>
+            <span class="finished"> <%= best_in_place [@user,project], :finished, as: :checkbox, collection: ["Sin acabar", "Acabado"]  %>
+            </span>
           <% else %>
-            <span class="notfinished">Sin acabar</span>
+            <span class="notfinished"> <%= best_in_place [@user,project], :finished, as: :checkbox, collection: ["Sin acabar", "Acabado"]  %>
+            </span>
           <% end %>
           <% if project.cliente %>
           <%= link_to project.cliente.name, "#", class: "client-title"   %>
@@ -21,7 +23,8 @@
           <%= link_to "Sin asignar", "#", class: "client-title"   %>
           <% end %>
           <% if project.description? %>
-           <p class="editable"><%= best_in_place [@user,project], :description, :as => :input %></p>
+           <p><%= best_in_place [@user,project], :description, :as => :input, inner_class: "form-control", activator: '#edit-' + project.id.to_s  %>
+           <span id="edit-<%= project.id %>" class="editable">(Editar)</span></p>
            <% else %>
            <p><%= best_in_place [@user,project], :description, :place_holder => "Añadir una description" %></p>
           <% end %>

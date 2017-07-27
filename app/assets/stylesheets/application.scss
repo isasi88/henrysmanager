@@ -472,14 +472,12 @@ a {
 	}
 }
 
-.editable:hover {
+.editable {
 	cursor: pointer;
+	color: #556b81;
+	margin-left: 10px;
 }
-.editable:hover :before {
-	font-family: "icomoon";
-	content: "\e91b";
-	margin-right: 5px;
-}	
+
 .editable > [type="submit"], html [type="button"] {
 	width: 20%!important;
 }
@@ -565,8 +563,9 @@ a {
 	padding-top: 0;
 }
 .finished {
+	cursor: pointer;
 	background: #6ef3b0;
-	font-weight: 100;
+	font-weight: 500;
 	font-size: 0.6rem;
 	text-transform: uppercase;
 	font-family: "Cerabold";
@@ -581,8 +580,9 @@ a {
 	top: 0;
 }
 .notfinished {
-	background: #2cfc93;
-	font-weight: 100;
+	cursor: pointer;
+	background: #f36e9d;
+	font-weight: 500;
 	font-size: 0.6rem;
 	text-transform: uppercase;
 	font-family: "Cerabold";
