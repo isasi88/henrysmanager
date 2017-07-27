@@ -32,4 +32,4 @@ $(document).ready(function() {
     } );
 } );
 </script>
-<%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_cliente_path %>
+<%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_cliente_path(current_user) %>

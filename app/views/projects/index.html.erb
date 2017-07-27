@@ -42,4 +42,4 @@
       <h1 class="faded-alert">No tienes proyectos... Empieza creando uno!</h1>
   <% end %>
   </div>
-  <%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_project_path %>
+  <%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_project_path(current_user) %>
