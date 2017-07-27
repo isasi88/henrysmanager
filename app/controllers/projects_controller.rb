@@ -48,11 +48,11 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
-    @cliente = Cliente.find(params[:cliente_id])
+    @project = Project.find(params[:id])
+    @cliente = @project.cliente_id
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project }
+        format.json { render :index, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }

@@ -4,37 +4,27 @@
   <% @projects.each do |project| %>
     <div class="col-sm-6">
       <div class="card cliente row">
-      <div class="ribbon"><span><%= project.price %></span></div>
-        <div class="card-block col-sm-12">
-          <div class="row">
-          <div class="cliente-left col-sm-3">
-          <% if project.cliente %>
-          <span class="project-initials"><%= project.cliente.name.slice(0, 2) %></span>
-          <% else %>
-          <span class="project-initials"><%= project.title.slice(0, 2) %></span>
-          <% end %>
-          </div>
-          <h3 class="cliente-right col-sm-9 card-title">
-          <% if project.cliente %>
-          <%= link_to project.cliente.name, "#"   %>
-          <% else %>
-          <%= link_to "Sin asignar", "#"   %>
-          <% end %>
-          <% if project.title %>
-         <span><%= project.title %></span>
-         <% else %>
-         <span>Sin asignar</span>
-          <% end %></h3>
-          </div>
-          <div class="project-details">
-          <% if project.finished == false %>
+        <div class="card-block col-sm-12 card-title">
+        <% if project.finished == false %>
             <span class="finished">Finalizado</span>
           <% else %>
             <span class="notfinished">Sin acabar</span>
           <% end %>
-          <button class="btn-circle" ><i class="icon-folder"></i></button>
-          <button class="btn-circle"><i class="icon-trophy"></i></button>
-          </div>
+          <% if project.cliente %>
+          <%= link_to project.cliente.name, "#", class: "client-title"   %>
+          <% else %>
+          <%= link_to "Sin asignar", "#", class: "client-title"   %>
+          <% end %>
+          <% if project.cliente %>
+          <%= link_to project.title, "#", class: "project-title"   %>
+          <% else %>
+          <%= link_to "Sin asignar", "#", class: "client-title"   %>
+          <% end %>
+          <% if project.description? %>
+           <p class="editable"><%= best_in_place [@user,project], :description, :as => :input %></p>
+           <% else %>
+           <p><%= best_in_place [@user,project], :description, :place_holder => "Añadir una description" %></p>
+          <% end %>
         </div>
       </div>
     </div>

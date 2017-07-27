@@ -11,29 +11,31 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 </head>
 <body>
-<%= render "layouts/header.html.erb" %>
 <% if user_signed_in? %>
 <div class="row">
-<aside class="col-sm-3 menu-principal">
-	<ul>
-		<%= link_to "<li><i class='icon-book'></i> Proyectos</li>".html_safe, user_projects_path(current_user)%>
-		<%= link_to "<li><i class='icon-users'></i> Clientes</li>".html_safe, user_clientes_path(current_user) %>
-		<%= link_to "<li><i class='icon-target'></i> Negociaciones</li>".html_safe, user_negociations_path(current_user) %>
-		<%= link_to "<li><i class='icon-bookmark'></i> Reuniones</li>".html_safe, user_meetings_path(current_user) %>
-		<%= link_to "<li><i class='icon-book'></i> Proyectos</li>".html_safe, user_projects_path(current_user) %>
-	</ul>
-</aside>
-<section class="col-sm-9 dashboard">
-<div class="dashboard-inner">
-<%= yield %>
+	<aside class="col-sm-3 menu-principal">
+	<div class="row">
+		<%= image_tag "logo.png", class: "logo" %>
+	</div>
+		<ul>
+			<%= link_to "<li><i class='icon-book'></i> Proyectos</li>".html_safe, user_projects_path(current_user)%>
+			<%= link_to "<li><i class='icon-users'></i> Clientes</li>".html_safe, user_clientes_path(current_user) %>
+			<%= link_to "<li><i class='icon-target'></i> Negociaciones</li>".html_safe, user_negociations_path(current_user) %>
+			<%= link_to "<li><i class='icon-bookmark'></i> Reuniones</li>".html_safe, user_meetings_path(current_user) %>
+			<%= link_to "<li><i class='icon-book'></i> Proyectos</li>".html_safe, user_projects_path(current_user) %>
+		</ul>
+	</aside>
+	<section class="col-sm-9 dashboard">
+			<div class="dashboard-inner">
+			<%= yield %>
+			</div>
+		<% else %>
+			<div class="main-page">
+			<%= render "devise/sessions/new.html.erb" %>
+			</div>
+		<% end %>
+	</section>
 </div>
-<% else %>
-<div class="main-page">
-<%= yield %>
-</div>
-<% end %>
-</div>
-</section>
 
 </body>
 </html>

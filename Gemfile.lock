@@ -40,6 +40,9 @@ GEM
     autoprefixer-rails (7.1.2.3)
       execjs
     bcrypt (3.1.11)
+    best_in_place (3.1.1)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     builder (3.2.3)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -136,6 +139,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  best_in_place
   bootstrap!
   coffee-rails (~> 4.0.0)
   devise
