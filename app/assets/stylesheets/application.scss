@@ -27,7 +27,24 @@
 }
 
 
-
+.main-h1 {
+	font-size: 2rem;
+	margin-bottom: 30px;
+	display: inline-block;
+	position: relative;
+	&:after {
+		content: "";
+		width: 7px;
+		border-radius: 50%;
+		height: 7px;
+		background: none;
+		display: inline-block;
+		background: #4264fb;
+		position: absolute;
+		right: -10px;
+		top: 0;
+	}
+}
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: "CeraBold";
@@ -560,13 +577,13 @@ a {
 	margin: 0;
 	padding-top: 0;
 }
-.finished {
+.finished,.finished span{
 	cursor: pointer;
 	background: #6ef3b0;
 	font-weight: 500;
 	font-size: 0.6rem;
 	text-transform: uppercase;
-	font-family: "Cerabold";
+	font-family: "Cerabold"!important;
 	border-radius: 4px;
 	display: inline-block;
 	padding: 5px;
@@ -577,13 +594,13 @@ a {
 	right: 0;
 	top: 0;
 }
-.notfinished {
+.notfinished, .notfinished span{
 	cursor: pointer;
 	background: #f36e9d;
 	font-weight: 500;
 	font-size: 0.6rem;
 	text-transform: uppercase;
-	font-family: "Cerabold";
+	font-family: "Cerabold"!important;
 	border-radius: 4px;
 	display: inline-block;
 	padding: 5px;

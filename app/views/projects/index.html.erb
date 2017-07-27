@@ -1,4 +1,5 @@
 <section class="row">
+<h1 class="main-h1"> Mis proyectos </h1>
   <div class="col-sm-12">
   <div class="row">
   <% @projects.each do |project| %>
@@ -8,8 +9,11 @@
           <% if project.finished == true %>
             <span class="finished"> <%= best_in_place [@user,project], :finished, as: :checkbox, collection: ["Sin acabar", "Acabado"]  %>
             </span>
-          <% else %>
+          <% elsif project.finished == false %>
             <span class="notfinished"> <%= best_in_place [@user,project], :finished, as: :checkbox, collection: ["Sin acabar", "Acabado"]  %>
+            </span>
+          <% else %>
+            <span class="notfinished"> Sin asignar </span>
             </span>
           <% end %>
           <% if project.cliente %>
