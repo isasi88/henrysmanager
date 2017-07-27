@@ -1,11 +1,5 @@
 <h1 class="main-h1">Negociaciones en curso
 </h1>
-
-
-
-
-<section class="row">
-  <div class="col-sm-12">
   <div class="row">
   <% @negociations.each do |negociation| %>
     <div class="col-sm-6">
@@ -40,13 +34,10 @@
          <span class="finished no-state">Sin estado</span> 
         </div>
       </div>
-    </div>
     <% end %>
     <% end %>
   </div>
   </div>
-  </div>
-</section>
   <%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_negociation_path(current_user) %>
 
 
