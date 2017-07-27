@@ -50,7 +50,8 @@ a {
   list-style-type: none;
   margin: 20px;
   padding: 0;
-  width: 70%;
+  width: 25%;
+  margin-top: 40px;
 }
 
 .steps > li {
@@ -125,8 +126,9 @@ $step-map: (
 
 .steps > .complete > a,
 .steps > .complete > a:hover {
-  background-color: #3ae2d0;
-  color: #fff;
+  border: 2px solid #4264fb;
+  color: #4264fb;
+  z-index: 3;
 }
 
 .steps > .complete > a:before,
@@ -134,16 +136,6 @@ $step-map: (
   display: none;
 }
 
-.steps > .complete + .complete:before {
-  background-color: #3ae2d0;
-  content: "";
-  height: 10px;
-  position: absolute;
-  left: 8px;
-  top: -1px;
-  width: calc(100% - 26px);
-  z-index: 2;
-}
 
 
 .btn-circle {
@@ -452,7 +444,7 @@ a {
 		font-weight: 700;
 	}
 	border: 1px solid #f5f5f5;
-	border-left: 4px solid #3ae2d0;
+	border-left: 4px solid #4264fb;
 	background: #fff;
 	margin-bottom:2px;
 	color: white;
@@ -629,7 +621,7 @@ input {
 	margin-bottom: 40px;
 	.number {
 		margin: auto;
-		color: #3ae2d0;
+		color: #4264fb;
 		font-size: 4rem;
 		font-weight: 700;
 		display: block;
@@ -638,7 +630,7 @@ input {
     	clear: both;
 	}
 	.subtitle {
-		color: #3ae2d0;
+		color: #4264fb;
 		display: table;
     	clear: both;
 		width: 100%;
@@ -661,7 +653,7 @@ input {
 			background: #fff;
 		width: 100%;
 		padding: 15px 20px;
-		color: #3ae2d0;
+		color: #4264fb;
 		}
 	}
 }
@@ -671,7 +663,7 @@ p {
 	color: #b4b1c1;
 }
 .menu-actions {
-	background: #3ae2d0;
+	background: #4264fb;
 	padding: 20px 0;
 	color: #fff;
 	margin: 0;
