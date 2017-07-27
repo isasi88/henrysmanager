@@ -513,6 +513,14 @@ input:-webkit-autofill {
 	top: 0;
 }
 
+.finished-1, .finished-2, .finished-3, .finished-4, .no-state {
+	background: $purple;
+	width: 120px;
+}
+
+.no-state {
+	background: #ddd;
+}
 .sub-menu {
 	list-style: none;
 	margin-bottom: 0;
