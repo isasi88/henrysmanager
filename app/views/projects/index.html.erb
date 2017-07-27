@@ -23,8 +23,8 @@
           <%= link_to "Sin asignar", "#", class: "client-title"   %>
           <% end %>
           <% if project.description? %>
-           <p><%= best_in_place [@user,project], :description, :as => :input, inner_class: "form-control", activator: '#edit-' + project.id.to_s  %>
-           <span id="edit-<%= project.id %>" class="editable">(Editar)</span></p>
+           <p><%= best_in_place [@user,project], :description, :as => :input, inner_class: "form-control" %>
+           <span id="edit-<%= project.id %>" class="editable">(Click en la descripción para editar)</span></p>
            <% else %>
            <p><%= best_in_place [@user,project], :description, :place_holder => "Añadir una description" %></p>
           <% end %>
