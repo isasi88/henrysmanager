@@ -1,5 +1,5 @@
+<div class="form-new wide-form">
 <%= form_for [@user,@project] do |f| %>
-<div class="form-new">
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -11,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-
+<h1 class="text-center">Nuevo Proyecto</h1>
   <div class="form-group">
     <%= f.label :titulo, "Titulo" %><br>
     <%= f.text_field :title, class: "form-control" %>
@@ -23,7 +23,7 @@
   <div class="form-group">
     <%= f.label :cliente_id, "Cliente" %><br>
     <%= f.collection_select :cliente_id, @clients, :id, :name, class: "form-control" %>
-    <%= link_to "<button class='btn btn-primary'>O añade un nuevo cliente</button>".html_safe, new_user_cliente_path %>
+    <%= link_to "<button class='btn btn-primary'>o nuevo cliente</button>".html_safe, new_user_cliente_path %>
   </div>
   <div class="form-group">
     <%= f.label :condicion, "Tamaño" %><br>

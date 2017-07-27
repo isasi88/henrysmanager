@@ -28,6 +28,7 @@
 
 
 
+
 h1,h2,h3,h4,h5,h6 {
 	font-family: "CeraBold";
 	color: #1f3349;
@@ -412,12 +413,6 @@ body {
 	padding: 5px;
 	font-size: 0.8rem;
 }
-h1,td {
-	font-size: 1.6rem;
-	font-weight: 700;
-	margin-bottom: 20px;
-	color: #fff;
-}
 
 td {
 	font-size: 0.9rem;
@@ -516,8 +511,9 @@ a {
 	color: #556b81;
 	border: 1px solid lighten(#556b81, 50%);
 	border-radius: 2px;
-	font-family: "CeraMedium";
+	font-family: "CeraLight";
 	font-weight: 700;
+	height: 40px;
 }
 
 .form-new {
@@ -527,6 +523,7 @@ a {
 	padding: 40px;
 	background: white;
 }
+
 .width100 {
 	width: 100%;
 }
@@ -887,4 +884,10 @@ p {
   content: "\e93b";
 }
 
-
+.wide-form {width: 60%;margin-top: 40px;
+	h1 {
+		margin-bottom: 30px;
+	}
+ label {
+		font-family: "CeraMedium";
+	}}
