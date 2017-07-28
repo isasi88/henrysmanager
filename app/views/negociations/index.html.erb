@@ -1,43 +1,43 @@
 <h1 class="main-h1">Negociaciones en curso
 </h1>
   <div class="row">
-  <% @negociations.each do |negociation| %>
-    <div class="col-sm-6">
-      <div class="card cliente row">
-        <div class="card-block col-sm-12 card-title">
-          <% if negociation.title %>
-          <%= link_to negociation.title, "#", class: "client-title"   %>
-          <% else %>
-          <%= link_to "Sin asignar", "#", class: "client-title"   %>
-          <% end %>
-          <% if negociation.title %>
-          <%= link_to negociation.title, "#", class: "project-title"   %>
-          <% else %>
-          <%= link_to "Sin asignar", "#", class: "client-title"   %>
-          <% end %>
-          <% if negociation.description? %>
-            <p><%= negociation.description %></p>
-          <% else %>
-            <p> No hay tema tratado. </p>
-          <% end %>
-        <% if negociation.state == "1" %>
-          <span class="finished finished-1">Contactado</span> 
-        <% elsif negociation.state == "2" %>
-         <span class="finished finished-2">En propuesta</span> 
-        <% elsif negociation.state == "3" %>
-          <span class="finished finished-3">En conversaciones</span> 
-        <% elsif negociation.state == "4" %>
-         <span class="finished finished-4">Reunion</span> 
-        <% elsif negociation.state == "5" %>
-         <span class="finished finished-5">Cerrada</span> 
-          <% else %>
-         <span class="finished no-state">Sin estado</span> 
+    <% @negociations.each do |negociation| %>
+      <div class="col-sm-6">
+        <div class="card cliente row">
+          <div class="card-block col-sm-12 card-title">
+            <% if negociation.title %>
+            <%= link_to negociation.title, "#", class: "client-title"   %>
+            <% else %>
+            <%= link_to "Sin asignar", "#", class: "client-title"   %>
+            <% end %>
+            <% if negociation.title %>
+            <%= link_to negociation.title, "#", class: "project-title"   %>
+            <% else %>
+            <%= link_to "Sin asignar", "#", class: "client-title"   %>
+            <% end %>
+            <% if negociation.description? %>
+              <p><%= negociation.description %></p>
+            <% else %>
+              <p> No hay tema tratado. </p>
+            <% end %>
+            <% if negociation.state == "1" %>
+              <span class="finished finished-1">Contactado</span> 
+            <% elsif negociation.state == "2" %>
+             <span class="finished finished-2">En propuesta</span> 
+            <% elsif negociation.state == "3" %>
+              <span class="finished finished-3">En conversaciones</span> 
+            <% elsif negociation.state == "4" %>
+             <span class="finished finished-4">Reunion</span> 
+            <% elsif negociation.state == "5" %>
+             <span class="finished finished-5">Cerrada</span> 
+              <% else %>
+             <span class="finished no-state">Sin estado</span> 
+             <% end %>
+          </div>
         </div>
       </div>
-      </div>
-    <% end %>
-    <% end %>
-  </div>
+  <% end %>
+</div>
   <%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_negociation_path(current_user) %>
 
 
