@@ -5,7 +5,7 @@ class MeetingsController < ApplicationController
   # GET /meetings.json
   def index
     @user = current_user
-    @meetings = @user.meetings.all
+    @meetings = @user.meetings.all.where('date >= ?', Date.today).order('date ASC')
   end
 
   # GET /meetings/1
