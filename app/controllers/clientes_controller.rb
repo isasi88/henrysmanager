@@ -21,6 +21,7 @@ class ClientesController < ApplicationController
 
   # GET /clientes/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /clientes

@@ -1,4 +1,3 @@
-<div class="form-new wide-form">
 <%= form_for [@user,@cliente] do |f| %>
   <% if @cliente.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-<h1 class="text-center main-h1">Nuevo cliente</h1>
   <div class="form-group">
     <%= f.label :name, "Nombre de cliente" %><br>
     <%= f.text_field :name, class: "form-control" %>
@@ -27,5 +25,4 @@
   <div class="form-actions">
     <%= f.submit %>
   </div>
-</div>
 <% end %>

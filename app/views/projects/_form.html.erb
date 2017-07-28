@@ -1,4 +1,3 @@
-<div class="form-new wide-form">
 <%= form_for [@user,@project] do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-<h1 class="main-h1 text-center">Nuevo Proyecto</h1>
   <div class="form-group">
     <%= f.label :titulo, "Titulo" %><br>
     <%= f.text_field :title, class: "form-control" %>
@@ -57,9 +55,8 @@
     <%= f.label :category_id, "Categoria" %><br>
     <%= f.number_field :category_id,class: "form-control" %>
   </div>
-  <div class="form-actions">
+  <div >
     <%= f.submit %>
-  </div>
   </div>
   <script>
     $(document).ready(function() {

@@ -17,7 +17,7 @@
         <td><%= cliente.email %></td>
         <td><%= link_to '<button class="btn-primary btn-small">Ver</button>'.html_safe, user_clientes_path(current_user) %>
         <%= link_to '<button class="btn-primary btn-small">Editar</button>'.html_safe, edit_user_cliente_path(current_user,cliente) %>
-        <%= link_to '<button class="btn-primary btn-small">Borrar</button>'.html_safe, user_cliente_path(current_user,cliente), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= link_to '<button class="btn-primary btn-small">Borrar</button>'.html_safe, user_cliente_path(current_user,cliente), method: :delete, data: { confirm: '¿Seguro?' } %></td>
     <% end %>
     </tr>
   </tbody>

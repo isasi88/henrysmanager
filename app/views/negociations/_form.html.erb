@@ -10,9 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-<div class="form-new wide-form">
-<h1 class="main-h1">Nueva negociacion</h1>
   <div class="form-group">
     <%= f.label :title, "Cliente" %><br>
     <%= f.text_field :title, class: "form-control" %>
@@ -37,8 +34,7 @@
     <%= f.label :state, "Estado de la negociación" %><br>
     <%= f.select :state, [['Toma de contacto', 1], ['En conversaciones', 2], ['Avanzada', 3], ['Muy avanzada', 4], ['Cerrada', 5]], class: "form-control" %>
   </div>
-  <div class="actions">
+  <div>
     <%= f.submit %>
-  </div>
   </div>
 <% end %>
