@@ -9,4 +9,13 @@ class PagesController < ApplicationController
 	def landing
 		render 'landing'
 	end
+
+	def finances
+		@user = current_user
+		@projects = @user.projects.all
+		@estimated = @user.projects.pluck(:price).sum
+		@estimated_iva = @user.projects.pluck(:iva).sum
+		@totalprice = @estimated + @estimated_iva
+
+	end
 end

@@ -6,14 +6,14 @@
         <div class="card cliente row">
           <div class="card-block col-sm-12 card-title">
             <% if negociation.title %>
-            <%= link_to negociation.title, "#", class: "client-title"   %>
+              <%= link_to negociation.title, "#", class: "client-title"   %>
             <% else %>
             <%= link_to "Sin asignar", "#", class: "client-title"   %>
             <% end %>
-            <% if negociation.title %>
-            <%= link_to negociation.title, "#", class: "project-title"   %>
+            <% if negociation.business %>
+              <%= link_to negociation.business, "#", class: "project-title"   %>
             <% else %>
-            <%= link_to "Sin asignar", "#", class: "client-title"   %>
+            <%= link_to "Empresa sin asignar", "#", class: "client-title"   %>
             <% end %>
             <% if negociation.description? %>
               <p><%= negociation.description %></p>

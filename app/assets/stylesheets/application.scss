@@ -4,12 +4,39 @@
 
 $purple: #4264fb;
 $lightpurple: lighten($purple, 10%);
-$grey: #222;
+$grey: #999;
 $bold: "Cerabold";
 $medium: "CeraMedium";
 $light: "CeraLight";
 $boxshadow: 1px 2px 3px rgba(0,0,0,0.1);
 
+
+// Stats
+
+.stats {
+	list-style: none;
+	text-align: center;
+	box-shadow: $boxshadow;
+	background: white;
+	padding: 40px 20px;
+	li {
+		border-right: 1px solid #eee;
+		.number {
+			font-size: 3rem;
+			font-family: $bold;
+	}
+		.number-details {
+			display: block;
+			font-family: $medium;
+			margin-top: 10px;
+			color: $lightpurple;
+		}
+		span {
+			font-size: 1rem;
+			line-height: 1rem;
+		}
+	}
+}
 // Tipography
 
 @font-face {
