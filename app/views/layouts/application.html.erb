@@ -24,6 +24,10 @@
 			<%= link_to "<li><i class='icon-bookmark'></i> Reuniones</li>".html_safe, user_meetings_path(current_user) %>
 			<%= link_to "<li><i class='icon-book'></i> Mis finanzas</li>".html_safe, finances_path(current_user) %>
 		</ul>
+		<div class="credits">
+		<p class="text-center white margin-top">Creado con <i class="icon-heart"> </i> por Henry's en Madrid</br>
+		<a href="http://www.somoshenrys.com">www.somoshenrys.com</a></p>
+		</div>
 	</aside>
 	<section class="col-sm-9 dashboard">
 	<% flash.each do |key, value| %>

@@ -104,6 +104,17 @@ a {
 .lightgrey {
 	color: #ccc;
 }
+
+.credits {
+	p {color: white;}
+	a {
+		font-family: $bold;
+		color: white;
+		&:hover {
+			color: white;
+		}
+	}
+}
 // Alerts
 
 .alert {
