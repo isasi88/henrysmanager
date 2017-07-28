@@ -42,9 +42,10 @@ class MeetingsController < ApplicationController
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json
   def update
+    @user = current_user
     respond_to do |format|
       if @meeting.update(meeting_params)
-        format.html { redirect_to @meeting, notice: 'Editado correctamente.' }
+        format.html { redirect_to user_meetings_path(@user), notice: 'Editado correctamente.' }
         format.json { render :show, status: :ok, location: @meeting }
       else
         format.html { render :edit }

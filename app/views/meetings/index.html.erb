@@ -17,8 +17,8 @@
           <div class="meeting-details">
             <h6 class="margin-top"><%= link_to meeting.title, "#"   %></h6>
             <span class="project-title"> <i class="icon-map-marker"></i> <%= meeting.location %> - <%= t (meeting.date.strftime("%H:%M")) %></span>
+                        <%= link_to "<button class='btn-small'>Editar</button>".html_safe, edit_user_meeting_path(current_user, meeting) %>
             <button class="btn-primary width100 margin-top">Ver mapa</button>
-
           </div>
       </div>
     </div>
