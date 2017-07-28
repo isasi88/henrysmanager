@@ -30,7 +30,7 @@ class NegociationsController < ApplicationController
 
     respond_to do |format|
       if @negociation.save
-        format.html { redirect_to root_path, notice: 'Negociation was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Enhorabuena! A negociar se ha dicho!' }
         format.json { render :show, status: :created, location: @negociation }
       else
         format.html { render :new }
@@ -42,9 +42,10 @@ class NegociationsController < ApplicationController
   # PATCH/PUT /negociations/1
   # PATCH/PUT /negociations/1.json
   def update
+    @user = current_user
     respond_to do |format|
       if @negociation.update(negociation_params)
-        format.html { redirect_to @negociation, notice: 'Negociation was successfully updated.' }
+        format.html { redirect_to user_negociations_path(@user), notice: 'Editado correctamente.' }
         format.json { render :show, status: :ok, location: @negociation }
       else
         format.html { render :edit }

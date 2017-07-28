@@ -26,6 +26,9 @@
 		</ul>
 	</aside>
 	<section class="col-sm-9 dashboard">
+	<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
 			<%= render "layouts/dashboard_header.html.erb" %>
 			<div class="dashboard-inner">
 			<%= yield %>

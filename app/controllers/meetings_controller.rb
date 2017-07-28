@@ -30,7 +30,7 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       if @meeting.save
-        format.html { redirect_to root_path, notice: 'Meeting was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Enhorabuena! Tienes una nueva reunion.' }
         format.json { render :show, status: :created, location: @meeting }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class MeetingsController < ApplicationController
   def update
     respond_to do |format|
       if @meeting.update(meeting_params)
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
+        format.html { redirect_to @meeting, notice: 'Editado correctamente.' }
         format.json { render :show, status: :ok, location: @meeting }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class MeetingsController < ApplicationController
   def destroy
     @meeting.destroy
     respond_to do |format|
-      format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
+      format.html { redirect_to meetings_url, notice: 'Reunion borrada :(' }
       format.json { head :no_content }
     end
   end

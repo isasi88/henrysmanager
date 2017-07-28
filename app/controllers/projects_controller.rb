@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to root_path, notice: 'Project was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Enhorabuena! Tienes un nuevo proyecto. A trabajar!' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -66,7 +66,7 @@ class ProjectsController < ApplicationController
     @cliente = Cliente.find(params[:cliente_id])
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to projects_url, notice: 'Proyecto borrado :(' }
       format.json { head :no_content }
     end
   end

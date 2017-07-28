@@ -33,6 +33,7 @@
               <% else %>
              <span class="finished no-state">Sin estado</span> 
              <% end %>
+             <%= link_to "<button class='btn-small'>Editar</button>".html_safe, edit_user_negociation_path(current_user, negociation) %>
           </div>
         </div>
       </div>
