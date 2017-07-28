@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem "chartkick"
 gem 'devise'
 gem 'best_in_place'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

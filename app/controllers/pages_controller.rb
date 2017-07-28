@@ -16,6 +16,5 @@ class PagesController < ApplicationController
 		@estimated = @user.projects.pluck(:price).sum
 		@estimated_iva = @user.projects.pluck(:iva).sum
 		@totalprice = @estimated + @estimated_iva
-
 	end
 end
