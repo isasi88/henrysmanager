@@ -830,3 +830,24 @@ input:-webkit-autofill {
 	font-size: 0.7rem;
 	padding: 2px 10px;
 }
+
+.dataTables_wrapper .row {
+	width: 100%;
+}
+
+.paginate_button {margin-right: 20px;}
+.dataTables_wrapper label {
+	justify-content: left;
+	margin-bottom: 20px;
+	margin-right: 5px;
+}
+.dataTables_wrapper select {
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.dataTables_wrapper input {
+	margin-right: 5px;
+	margin-left: 5px;
+	border-radius: 4px;
+}
