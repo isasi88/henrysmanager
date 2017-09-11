@@ -26,7 +26,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @cliente = Cliente.find(params[:cliente_id])
+    @project = Project.find(params[:id])
+    @cliente = @project.cliente
   end
 
   # POST /projects
