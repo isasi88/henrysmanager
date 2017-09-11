@@ -21,7 +21,6 @@
 //= require chartkick
 //= require best_in_place
 //= require jquery.purr
-//= require turbolinks
 
 //= require_tree .
 

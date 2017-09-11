@@ -59,7 +59,7 @@ class NegociationsController < ApplicationController
   def destroy
     @negociation.destroy
     respond_to do |format|
-      format.html { redirect_to negociations_url, notice: 'Negociation was successfully destroyed.' }
+      format.html { redirect_to user_negociations_url, notice: 'Negociation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

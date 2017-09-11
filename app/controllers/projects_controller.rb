@@ -63,10 +63,11 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    @cliente = Cliente.find(params[:cliente_id])
+    @project = Project.find(params[:id])
+    @cliente = @project.cliente
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Proyecto borrado :(' }
+      format.html { redirect_to user_projects_url, notice: 'Proyecto borrado :(' }
       format.json { head :no_content }
     end
   end
