@@ -17,7 +17,7 @@
 	</div>
 		<ul>
 			<%= link_to "<li><i class='icon-book'></i> Proyectos</li>".html_safe, user_projects_path(current_user)%>
-			<%= link_to "<li><i class='icon-users'></i> Clientes</li>".html_safe, user_clientes_path(current_user) %>
+			<%= link_to "<li><i class='icon-users'></i> Clientes</li>".html_safe, user_clientes_path(current_user), :"data-no-turbolink" => true  %>
 			<%= link_to "<li><i class='icon-target'></i> Negociaciones</li>".html_safe, user_negociations_path(current_user) %>
 			<%= link_to "<li><i class='icon-bookmark'></i> Reuniones</li>".html_safe, user_meetings_path(current_user) %>
 			<%= link_to "<li><i class='icon-book'></i> Mis finanzas</li>".html_safe, finances_path(current_user) %>

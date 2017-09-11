@@ -34,6 +34,7 @@
              <span class="finished no-state">Sin estado</span> 
              <% end %>
              <%= link_to "<button class='btn-small'>Editar</button>".html_safe, edit_user_negociation_path(current_user, negociation) %>
+             <%= link_to "<button class='btn-small'>Borrar</button>".html_safe, user_negociation_path(current_user, negociation, method: :delete) %>
           </div>
         </div>
       </div>
