@@ -4,7 +4,8 @@ class NegociationsController < ApplicationController
   # GET /negociations
   # GET /negociations.json
   def index
-    @negociations = Negociation.all
+    @user = current_user
+    @negociations = @user.negociations
   end
 
   # GET /negociations/1
