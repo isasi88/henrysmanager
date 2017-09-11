@@ -406,10 +406,12 @@ a {
 	}
 }
 
+.logo-container {
+	width: 100%;
+	text-align: center;
+}
 
 .logo {
-	float: left;
-	margin-left: 50px;
 	width: 160px;
 	margin: auto;
 }
