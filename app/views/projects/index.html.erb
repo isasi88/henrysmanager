@@ -33,7 +33,7 @@
            <p><%= best_in_place [@user,project], :description, :place_holder => "Añadir una description" %></p>
           <% end %>
              <%= link_to "<button class='btn-small'>Borrar</button>".html_safe, user_project_path(current_user, project), method: :delete, data: { confirm: '¿Seguro?' } %>
-             <%= link_to "<button class='btn-small'>Editar</button>".html_safe, edit_user_project_path(current_user, project) } %>
+             <%= link_to "<button class='btn-small'>Editar</button>".html_safe, edit_user_project_path(current_user, project) %>
         </div>
       </div>
     </div>
