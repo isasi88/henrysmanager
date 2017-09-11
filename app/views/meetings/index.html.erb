@@ -1,5 +1,5 @@
 <h1 class="main-h1">Mis reuniones</h1>
-
+<% if @meetings.any? %>
   <div class="row">
   <% @meetings.each do |meeting| %>
     <div class="col-sm-4">
@@ -25,7 +25,11 @@
     <% end %>
   </div>
 <%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_meeting_path(current_user) %>
+  <% else %>
+      <h1 class="faded-alert">No tienes reuniones... Empieza añadiendo una!</h1>
+  <% end %>
 </section>
+
 
 
 

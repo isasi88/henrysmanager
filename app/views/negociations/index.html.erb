@@ -1,5 +1,6 @@
 <h1 class="main-h1">Negociaciones en curso
 </h1>
+<% if @negociations.any? %>
   <div class="row">
     <% @negociations.each do |negociation| %>
       <div class="col-sm-6">
@@ -38,6 +39,9 @@
           </div>
         </div>
       </div>
+  <% end %>
+    <% else %>
+      <h1 class="faded-alert">No tienes negociaciones... Empieza añadiendo una!</h1>
   <% end %>
 </div>
   <%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_negociation_path(current_user) %>
