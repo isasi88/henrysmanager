@@ -26,6 +26,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @user = current_user
     @project = Project.find(params[:id])
     @cliente = @project.cliente
   end
