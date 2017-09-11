@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1/edit
   def edit
     @user = current_user
+    @clients = @user.clientes
     @project = Project.find(params[:id])
     @cliente = @project.cliente
   end
@@ -54,6 +55,7 @@ class ProjectsController < ApplicationController
     @cliente = @project.cliente_id
     respond_to do |format|
       if @project.update(project_params)
+        format.html { render :edit }
         format.json { render :index, status: :ok }
       else
         format.html { render :edit }

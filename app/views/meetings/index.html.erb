@@ -27,6 +27,7 @@
 <%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_meeting_path(current_user) %>
   <% else %>
       <h1 class="faded-alert">No tienes reuniones... Empieza añadiendo una!</h1>
+<%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_meeting_path(current_user) %>
   <% end %>
 </section>
 
