@@ -440,7 +440,13 @@ a {
 	margin-left: 10px;
 }
 
+.fr-wrapper a {
+	&:first-child {
+		background: #fff;
+		color: #fff;
+	}
 
+}
 .main-dashboard-header {
 	margin-top: 20px;
 	margin-bottom: 0px;
