@@ -18,17 +18,9 @@
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require dataTables/jquery.dataTables
 //= require Chart.bundle
-//= require froala_editor.min
 //= require chartkick
 //= require best_in_place
 //= require jquery.purr
-//= require plugins/align.min.js
-//= require plugins/font_family.min.js
-//= require plugins/font_size.min.js
-//= require plugins/fullscreen.min.js
-//= require plugins/image.min.js
-//= require plugins/line_breaker.min.js
-//= require plugins/link.min.js
 
 //= require_tree .
 

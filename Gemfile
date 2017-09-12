@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem "chartkick"
-gem "wysiwyg-rails"
+gem "dante-editor"
+gem 'underscore-rails'
+gem 'rails-sanitize-js'
 gem 'devise'
 gem 'best_in_place'
 gem 'jquery-datatables-rails', '~> 3.3.0'
