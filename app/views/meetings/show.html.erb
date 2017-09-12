@@ -1,24 +1,52 @@
 <p id="notice"><%= notice %></p>
+<h3> Notas para tu reunión con <%= @meeting.title %> </h3>
 
-<p>
-  <strong>Title:</strong>
-  <%= @meeting.title %>
-</p>
+<%= form_for [current_user,@meeting] do |f| %>
+	</br>
+	<%= f.submit "Guardar Notas" %>
+	</br>
+	</br>
+	<%= f.text_area :note, id: "froala" %>
+	</br>
+	<%= f.submit "Guardar Notas" %>
+<% end %>
 
-<p>
-  <strong>Date:</strong>
-  <%= @meeting.date %>
-</p>
+<script>
+  $(function() {
+    $('#froala').froalaEditor({
+   	  heightMin: 600,
+      heightMax: 1000
+    })
+  });
+</script>
 
-<p>
-  <strong>Location:</strong>
-  <%= @meeting.location %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @meeting.description %>
-</p>
-
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
-<%= link_to 'Back', meetings_path %>
+<script>
+  $(function() {
+    $('#froala')
+      .froalaEditor({
+        // Change save interval (time in miliseconds).
+        saveInterval: 2500,
+ 
+        // Set the save param.
+        saveParam: 'content',
+ 
+        // Set the save URL.
+        saveURL: '/#{@user}',
+ 
+        // HTTP request type.
+        saveMethod: 'POST',
+ 
+        // Additional save params.
+        saveParams: {id: 'my_editor'}
+      })
+      .on('froalaEditor.save.before', function (e, editor) {
+		alert("");
+      })
+      .on('froalaEditor.save.after', function (e, editor, response) {
+      	alert("EXITO");
+      })
+      .on('froalaEditor.save.error', function (e, editor, error) {
+        alert("ERROR");
+       })
+  });
+</script>

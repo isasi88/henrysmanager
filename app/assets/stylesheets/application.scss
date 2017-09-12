@@ -1,5 +1,23 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Muli:400,600,700');
+@import "froala_editor.min.css";
+@import "froala_style.min.css";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'plugins/char_counter.min.css';
+
+
+// Froala
+
+.fr-box.fr-basic.fr-top .fr-wrapper {
+box-shadow: 0!important;
+background: #ebeff2;
+border: 0;
+p {
+	color: #333;
+}
+}
+
 // Variables
 
 $purple: #4264fb;

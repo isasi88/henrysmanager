@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem "chartkick"
+gem "wysiwyg-rails"
 gem 'devise'
 gem 'best_in_place'
 gem 'jquery-datatables-rails', '~> 3.3.0'
