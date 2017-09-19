@@ -1,11 +1,11 @@
-<h1 class="main-h1 no-margin-bottom">Mis reuniones</h1>
-<%= link_to reuniones_pasadas_path do %>
-  <span class="old-meetings-label"> Ir a reuniones pasadas</span>
+<h1 class="main-h1 no-margin-bottom">Reuniones pasadas</h1>
+<%= link_to user_meetings_path(current_user) do %>
+  <span class="old-meetings-label"> Volver a reuniones futuras</span>
 <% end %>
 </br></br>
-<% if @meetings.any? %>
+<% if @old_meetings.any? %>
   <div class="row">
-  <% @meetings.each do |meeting| %>
+  <% @old_meetings.each do |meeting| %>
     <div class="col-sm-4">
       <div class="card cliente text-center">
         <div class="card-block text-center">
@@ -37,8 +37,3 @@
       <h1 class="faded-alert">No tienes reuniones... Empieza añadiendo una!</h1>
 <%= link_to '<button class="btn-add"><i class="icon-plus"></i></button>'.html_safe, new_user_meeting_path(current_user) %>
   <% end %>
-</section>
-
-
-
-
